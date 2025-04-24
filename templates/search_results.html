@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search results for {{ query }}</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1>Search Results for: "{{ query }}"</h1>
+    <ul>
+    {% for movie in movies %}
+        <li><a href="/movie/{{ movie._id }}">{{ movie.title }} ({{ movie.year }})</a></li>
+    {% else %}
+        <p>No movies found with {{ query }} in the cast.</p>
+    {% endfor %}
+    </ul>
+    <a href="/">← Back to home</a>
+</body>
+</html>

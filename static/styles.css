@@ -1,0 +1,41 @@
+body {
+    font-family: system-ui, sans-serif;
+    background-color: #f0f8ff;
+    margin: 0;
+    padding: 20px;
+    color: #003366;
+}
+
+h1, h2 {
+    color: #005792;
+}
+
+a {
+    color: #005792;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+.card {
+    background-color: #ffffff;
+    border: 1px solid #b3e5fc;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.icon {
+    margin-right: 6px;
+}

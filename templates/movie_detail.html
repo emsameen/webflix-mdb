@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ movie.title }}</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="card">
+        <h1><span class="icon">🎞️</span>{{ movie.title }}</h1>
+        <p><span class="icon">🕒</span><strong>Year:</strong> {{ movie.year }}</p>
+        {% if movie.genres %}
+        <p><strong>Genres:</strong> {{ movie.genres|join(', ') }}</p>
+        {% endif %}
+        {% if movie.cast %}
+        <p><span class="icon">🧑‍🤝‍🧑</span><strong>Cast:</strong>
+            {% for actor in movie.cast %}
+                <a href="/?q={{ actor }}">{{ actor }}</a>{% if not loop.last %}, {% endif %}
+            {% endfor %}
+        </p>
+        {% endif %}
+        <a href="/">← Back to genre list</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Webflix Genres</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1>🎬 Webflix - Browse by Genre</h1>
+    <form method="get">
+        <input type="text" name="q" placeholder="Search by actor name...">
+        <button type="submit">Search</button>
+    </form>
+    {% for genre, movies in genre_map.items() %}
+        <h2>{{ genre }}</h2>
+        <ul>
+        {% for movie in movies %}
+            <li><a href="/movie/{{ movie._id }}">{{ movie.title }} ({{ movie.year }})</a></li>
+        {% endfor %}
+        </ul>
+    {% endfor %}
+</body>
+</html>
