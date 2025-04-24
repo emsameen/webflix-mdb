@@ -12,11 +12,14 @@
     </form>
     {% for genre, movies in genre_map.items() %}
         <h2>{{ genre }}</h2>
-        <ul>
+        <div class="movie-grid">
         {% for movie in movies %}
-            <li><a href="/movie/{{ movie._id }}">{{ movie.title }} ({{ movie.year }})</a></li>
+            <a href="/movie/{{ movie._id }}" class="movie-tile">
+                <div class="movie-title">{{ movie.title }}</div>
+                <div class="movie-year">({{ movie.year }})</div>
+            </a>
         {% endfor %}
-        </ul>
+        </div>
     {% endfor %}
 </body>
 </html>
