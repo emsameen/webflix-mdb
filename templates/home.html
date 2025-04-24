@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Webflix Genres</title>
     <link rel="stylesheet" href="/static/styles.css">
 </head>
+
 <body>
     <h1>🎬 Webflix - Browse by Genre</h1>
     <form method="get">
@@ -11,15 +13,18 @@
         <button type="submit">Search</button>
     </form>
     {% for genre, movies in genre_map.items() %}
-        <h2>{{ genre }}</h2>
-        <div class="movie-grid">
+    <h2>{{ genre }}</h2>
+    <div class="movie-grid">
         {% for movie in movies %}
-            <a href="/movie/{{ movie._id }}" class="movie-tile">
-                <div class="movie-title">{{ movie.title }}</div>
-                <div class="movie-year">({{ movie.year }})</div>
-            </a>
+        <a href="/movie/{{ movie._id }}" class="movie-tile">
+            <div class="movie-title">{{ movie.title }}</div>
+            <div class="movie-year">({{ movie.year }})</div>
+            <div class="comment-badge">{{ movie.comment_count }} 💬</div>
+        </a>
         {% endfor %}
-        </div>
+    </div>
+
     {% endfor %}
 </body>
+
 </html>
